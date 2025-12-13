@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portada Futurista Mejorada con Logo</title>
+<style>
+:root{
+    --bg-color:#0a0a0a;
+    --neon1:#ff00ff;
+    --neon2:#00ffff;
+    --neon3:#ff0055;
+    --text-color:#ffffff;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body, html{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#0a0a0a;
+}
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background: linear-gradient(120deg, #0a0a0a 0%, #0f0f0f 100%);
+}
+
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:400px;
+    height:400px;
+    background:url("images/lOGODIFINITIVO.PNG") center/contain no-repeat;
+    opacity:0.08;
+    transform:translate(-50%, -50%) rotate(0deg);
+    animation:logoFloat 10s ease-in-out infinite alternate;
+    z-index:1;
+}
+
+@keyframes logoFloat{
+    0% {transform:translate(-50%, -50%) rotate(0deg);}
+    50% {transform:translate(-50%, -55%) rotate(15deg);}
+    100% {transform:translate(-50%, -50%) rotate(0deg);}
+}
+
+
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+}
+
+
+.line-vert, .line-hor{
+    position:absolute;
+    z-index:3;
+    opacity:0.3;
+}
+.line-vert{
+    width:2px;
+    height:120%;
+    background:linear-gradient(to bottom, var(--neon2), transparent);
+    animation:lineMove linear infinite;
+}
+.line-hor{
+    width:120%;
+    height:2px;
+    background:linear-gradient(to right, var(--neon3), transparent);
+    animation:lineHorMove linear infinite;
+}
+.line-vert:nth-child(1){ left:10%; animation-duration:6s;}
+.line-vert:nth-child(2){ left:30%; animation-duration:5s;}
+.line-vert:nth-child(3){ left:50%; animation-duration:7s;}
+.line-vert:nth-child(4){ left:70%; animation-duration:6.5s;}
+.line-vert:nth-child(5){ left:90%; animation-duration:8s;}
+.line-hor:nth-child(6){ top:20%; animation-duration:5.5s;}
+.line-hor:nth-child(7){ top:50%; animation-duration:6.5s;}
+.line-hor:nth-child(8){ top:80%; animation-duration:7s;}
+
+@keyframes lineMove{0%{transform:translateY(-120%);}100%{transform:translateY(120%);}}
+@keyframes lineHorMove{0%{transform:translateX(-120%);}100%{transform:translateX(120%);}}
+
+
+.hero-content{
+    position:relative;
+    z-index:4;
+    text-align:center;
+    color:var(--text-color);
+    animation:fadeIn 2s ease forwards;
+}
+
+h1{
+    font-size:6rem;
+    color:var(--neon2);
+    text-shadow:0 0 15px var(--neon2),0 0 30px var(--neon2),0 0 60px var(--neon2),0 0 90px var(--neon2);
+    animation:glow 2s ease-in-out infinite alternate, floatText 3s ease-in-out infinite;
+}
+p{
+    font-size:2rem;
+    color:var(--neon1);
+    text-shadow:0 0 15px var(--neon1),0 0 30px var(--neon1);
+    margin-bottom:2.5rem;
+    animation:glow2 2s ease-in-out infinite alternate-reverse;
+}
+.button{
+    display:inline-block;
+    padding:20px 60px;
+    font-size:1.5rem;
+    font-weight:bold;
+    border-radius:50px;
+    color:#0a0a0a;
+    background:var(--neon2);
+    text-decoration:none;
+    box-shadow:0 0 40px var(--neon2),0 0 80px var(--neon2),0 0 120px var(--neon2);
+    transition:0.3s;
+    animation:pulse 2s infinite, floatButton 3s ease-in-out infinite;
+}
+.button:hover{
+    background:var(--neon1);
+    color:#0a0a0a;
+    box-shadow:0 0 50px var(--neon1),0 0 100px var(--neon1),0 0 150px var(--neon1);
+}
+
+@keyframes glow{0%{text-shadow:0 0 20px var(--neon2),0 0 40px var(--neon2);}50%{text-shadow:0 0 50px var(--neon2),0 0 100px var(--neon2);}100%{text-shadow:0 0 20px var(--neon2),0 0 40px var(--neon2);}}
+@keyframes glow2{0%{text-shadow:0 0 20px var(--neon1),0 0 40px var(--neon1);}50%{text-shadow:0 0 50px var(--neon1),0 0 100px var(--neon1);}100%{text-shadow:0 0 20px var(--neon1),0 0 40px var(--neon1);}}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+@keyframes floatText{0%{transform:translateY(0);}50%{transform:translateY(-15px);}100%{transform:translateY(0);}}
+@keyframes floatButton{0%{transform:translateY(0);}50%{transform:translateY(-10px);}100%{transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}
+
+@media (max-width:768px){
+    h1{font-size:3rem;}
+    p{font-size:1.2rem;}
+    .button{padding:15px 40px; font-size:1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="line-vert"></div>
+    <div class="line-vert"></div>
+    <div class="line-vert"></div>
+    <div class="line-vert"></div>
+    <div class="line-vert"></div>
+
+    <div class="line-hor"></div>
+    <div class="line-hor"></div>
+    <div class="line-hor"></div>
+
+    <div class="hero-content">
+        <h1>ANYINSAN</h1>
+        <p>FRANK HOYOS</p>
+        <a href="menuacademia.html" class="button">INICIO</a>
+    </div>
+</div>
+
+<script>
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+class Particle{
+    constructor(){
+        this.x = Math.random()*canvas.width;
+        this.y = Math.random()*canvas.height;
+        this.radius = Math.random()*3+1;
+        this.color = Math.random()<0.5 ? '#ff00ff':'#00ffff';
+        this.dx = (Math.random()-0.5)*2;
+        this.dy = (Math.random()-0.5)*2;
+    }
+    draw(){
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+        ctx.fillStyle=this.color;
+        ctx.shadowColor=this.color;
+        ctx.shadowBlur = 10;
+        ctx.fill();
+    }
+    update(){
+        this.x += this.dx;
+        this.y += this.dy;
+        if(this.x<0 || this.x>canvas.width) this.dx*=-1;
+        if(this.y<0 || this.y>canvas.height) this.dy*=-1;
+        this.draw();
+    }
+}
+
+let particlesArray = [];
+for(let i=0;i<200;i++){
+    particlesArray.push(new Particle());
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particlesArray.forEach(p => p.update());
+    requestAnimationFrame(animate);
+}
+animate();
+
+window.addEventListener('resize', ()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
