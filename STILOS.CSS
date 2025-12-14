@@ -1,4 +1,4 @@
-/* ===== Variables globales ===== */
+
 :root {
     --background-color: rgb(10, 10, 10);
     --text-title-color: #eef112;
@@ -14,7 +14,7 @@
     --border-color: #14407b;
 }
 
-/* ===== Reset ===== */
+
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ body {
     background-color: var(--background-color);
 }
 
-/* ===== Header ===== */
+
 header {
     z-index: 200;
     width: 100%;
@@ -45,7 +45,7 @@ header {
     background-color: var(--background-color);
 }
 
-/* ===== Menú hamburguesa ===== */
+
 .menu-container {
     display: flex;
     align-items: center;
@@ -66,7 +66,7 @@ header {
     background-color: var(--menu-color);
 }
 
-/* ===== Brand ===== */
+
 .brand .logo {
     width: 1.7rem;
 }
@@ -77,7 +77,7 @@ header {
     color: var(--text-title-color);
 }
 
-/* ===== Sidebar ===== */
+
 .sidebar {
     margin-top: 4rem;
     width: 18.75rem;
@@ -117,12 +117,11 @@ header {
     width: 1.6rem;
 }
 
-/* ===== Mostrar / ocultar según dispositivo ===== */
 .mobile-only {
     display: none;
 }
 
-/* ===== Main ===== */
+
 main {
     margin-top: 5rem;
     margin-left: 18.75rem;
@@ -131,16 +130,13 @@ main {
     width: calc(100% - 18.75rem);
 }
 
-/* ===== Contenido ===== */
 .content {
     max-width: 49rem;
     margin: auto;
     text-align: center;
 }
 
-/* ===== Media Queries ===== */
 
-/* Tablets */
 @media (max-width: 1024px) {
     .sidebar {
         width: 4rem;
@@ -152,10 +148,9 @@ main {
     }
 }
 
-/* ===== MÓVIL ===== */
+
 @media (max-width: 768px) {
 
-    /* ocultar PC / mostrar móvil */
     .pc-only {
         display: none;
     }
@@ -169,7 +164,7 @@ main {
         align-items: flex-start;
     }
 
-    /* menú horizontal arriba */
+   
     .sidebar {
         position: relative;
         width: 100%;
