@@ -1,23 +1,22 @@
-/* ===== Main ===== */
+
 main {
-    margin-top: 5rem;          /* espacio para header */
-    margin-left: 18.75rem;     /* espacio para sidebar vertical en PC */
+    margin-top: 5rem;         
+    margin-left: 18.75rem;     
     padding: 2rem;
     transition: margin-left 0.4s ease, margin-top 0.4s ease;
     color: var(--text-selected-color);
     width: calc(100% - 18.75rem);
 }
 
-/* ===== Mostrar / ocultar por dispositivo ===== */
 
-/* PC */
+
 .mobile-only {
     display: none;
 }
 
-/* ===== Media Queries ===== */
 
-/* Tablets */
+
+
 @media (max-width: 1024px) {
     main {
         margin-left: 4rem;
@@ -29,15 +28,14 @@ main {
     }
 }
 
-/* Móviles */
 @media (max-width: 720px) {
 
-    /* ocultar versión PC */
+   
     .pc-only {
         display: none;
     }
 
-    /* mostrar versión móvil */
+   
     .mobile-only {
         display: block;
     }
@@ -52,7 +50,7 @@ main {
         width: 100%;
         height: auto;
         position: fixed;
-        top: 3.5rem;          /* debajo del header */
+        top: 3.5rem;          
         left: 0;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
@@ -71,8 +69,8 @@ main {
     }
 
     main {
-        margin-left: 0;       /* sin margen lateral */
-        margin-top: 6.5rem;   /* header + menú horizontal */
+        margin-left: 0;       
+        margin-top: 6.5rem;   
         width: 100%;
         padding: 1rem;
     }
